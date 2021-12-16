@@ -1,0 +1,52 @@
+.Bookmarks {
+  width: 45%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.catCont {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill 200px);
+  grid-gap: 10px;
+}
+
+.bmCat {
+  overflow: auto;
+  height: auto;
+  width: 60%;
+  margin: 0 auto;
+  h4 {
+    margin: 10px 0 10px 10px;
+    text-align: left;
+  }
+
+  ul {
+    margin: 0 20px 20px 20px;
+    text-align: left;
+  }
+}
+
+.catTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button {
+    margin-right: 10px;
+    margin-top: 6px;
+  }
+}
+
+.catBottom {
+  display: none;
+}
+
+.show {
+  display: block;
+}

@@ -1,0 +1,11 @@
+body {
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
