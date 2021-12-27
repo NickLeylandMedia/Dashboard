@@ -10,6 +10,7 @@ import YoutubeLogo from "../img/Youtube.svg";
 import UdemyLogo from "../img/Udemy.svg";
 import FacebookLogo from "../img/Facebook.svg";
 import RedditLogo from "../img/Reddit.svg";
+import GithubLogo from "../img/github.svg";
 
 /* Component Imports */
 
@@ -21,6 +22,11 @@ const QuickBar = () => {
       Name: "Facebook",
       Icon: FacebookLogo,
       URL: "https://www.facebook.com/",
+    },
+    {
+      Name: "GitHub",
+      Icon: GithubLogo,
+      URL: "https://www.github.com/",
     },
     {
       Name: "YouTube",
@@ -42,7 +48,9 @@ const QuickBar = () => {
   const renderedQuick = quick.map(({ Name, Icon, URL }) => {
     return (
       <div key={`qi${Name}`} className="quickItem">
-        <img src={Icon} alt="" className="quickImg" />
+        <a href={URL}>
+          <img src={Icon} alt="" className="quickImg" />
+        </a>
         <a href={URL} className="quickLink">
           {Name}
         </a>

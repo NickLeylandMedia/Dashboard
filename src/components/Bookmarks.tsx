@@ -47,6 +47,12 @@ const Bookmarks = () => {
           ShortName: "",
         },
         {
+          Name: "Thangs",
+          URL: "http://www.thangs.com",
+          Icon: "",
+          ShortName: "",
+        },
+        {
           Name: "Thingiverse",
           URL: "https://www.thingiverse.com",
           Icon: "",
@@ -307,7 +313,7 @@ const Bookmarks = () => {
   //Function Return Statement
   return (
     <div className="Bookmarks">
-      <h2>Bookmarks</h2>
+      <h2 className="modTitle">Bookmarks</h2>
       <div className="catCont">{renderedCats}</div>
     </div>
   );

@@ -1,6 +1,6 @@
 /* Library Imports */
 //React
-import React from "react";
+import React, { useState } from "react";
 
 /* Stylesheet Imports */
 import "../styles/SearchBar.scss";
@@ -11,10 +11,28 @@ import "../styles/SearchBar.scss";
 
 /* Component/Functions */
 const SearchBar = () => {
+  //State to store search term
+  const [searchTerm, setSearch] = useState<string>("");
+
+  //Function to execute search term
+  const search = (e: any, term: string) => {
+    e.preventDefault();
+    window.location.href = `https://www.google.com/search?q=${term}`;
+  };
+
   return (
     <div className="SearchBar">
-      <input type="text" className="searchInput" />
-      <button className="searchButton">GO</button>
+      <form action="">
+        <input
+          type="text"
+          className="searchInput"
+          onChange={(e) => setSearch(e.target.value)}
+          onSubmit={(e) => search(e, searchTerm)}
+        />
+        <button className="searchButton" onClick={(e) => search(e, searchTerm)}>
+          GO
+        </button>
+      </form>
     </div>
   );
 };

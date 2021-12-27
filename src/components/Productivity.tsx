@@ -83,7 +83,10 @@ const Productivity = () => {
     let initList = [
       {
         Name: "Media",
-        Items: [{ Task: "Post Vlog On Youtube", Done: false }],
+        Items: [
+          { Task: "Post Vlog On Youtube", Done: false },
+          { Task: "Post Video On Youtube", Done: false },
+        ],
       },
       {
         Name: "Social",
@@ -140,7 +143,7 @@ const Productivity = () => {
   //Function Return Statement
   return (
     <div className="Productivity">
-      <h2>Productivity</h2>
+      <h2 className="modTitle">Productivity</h2>
       <div className="listSel"></div>
       <div className="listDisp">{renderedChecks}</div>
     </div>

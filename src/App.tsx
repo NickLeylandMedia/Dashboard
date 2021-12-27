@@ -12,6 +12,7 @@ import Bookmarks from "./components/Bookmarks";
 import Productivity from "./components/Productivity";
 import QuickBar from "./components/QuickBar";
 import SearchBar from "./components/SearchBar";
+import Reminders from "./components/Reminders";
 
 /* Component/Functions */
 const App = () => {
