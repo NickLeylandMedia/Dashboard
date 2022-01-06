@@ -1,16 +1,22 @@
 /* Library Imports */
 //React
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 /* Stylesheet Imports */
 import "../styles/Bookmarks.scss";
 
 /* Image Imports */
+import squareClose from "../img/squareClose.svg";
 
 /* Component Imports */
 
+/* Component Interfaces */
+type Props = {
+  addBookmark: (Category: string, Name: string, URL: string) => Promise<void>;
+};
+
 /* Component/Functions */
-const Bookmarks = () => {
+const Bookmarks: React.FC<Props> = ({ addBookmark }) => {
   //Array to render bookmarks from.
   const marks = [
     {
@@ -19,50 +25,34 @@ const Bookmarks = () => {
         {
           Name: "Cults3D",
           URL: "https://www.cults3d.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "GrabCAD",
           URL: "http://www.grabcad.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "My Mini Factory",
           URL: "http://www.myminifactory.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Pinshape",
           URL: "http://www.pinshape.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Redpah",
           URL: "http://www.redpah.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Thangs",
           URL: "http://www.thangs.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Thingiverse",
           URL: "https://www.thingiverse.com",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Yeggi",
           URL: "",
-          Icon: "",
-          ShortName: "",
         },
       ],
     },
@@ -72,14 +62,10 @@ const Bookmarks = () => {
         {
           Name: "Hatchbox Filaments",
           URL: "https://www.hatchbox3d.com/",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Siraya Tech Resins",
           URL: "https://siraya.tech/",
-          Icon: "",
-          ShortName: "",
         },
       ],
     },
@@ -89,26 +75,19 @@ const Bookmarks = () => {
         {
           Name: "Icons8",
           URL: "https://Icons8.com/",
-          Icon: "",
-          ShortName: "I8",
         },
         {
           Name: "Tabler Icons",
           URL: "https://tablerIcons.com/",
-          Icon: "",
-          ShortName: "Tabler",
         },
         {
           Name: "Iconfinder",
           URL: "",
           Icon: "https://Iconfinder.com/",
-          ShortName: "IF",
         },
         {
           Name: "SVG Crop",
           URL: "https://svgcrop.com/",
-          Icon: "",
-          ShortName: "SVGC",
         },
       ],
     },
@@ -118,20 +97,14 @@ const Bookmarks = () => {
         {
           Name: "Google Maps",
           URL: "https://www.maps.google.com",
-          Icon: "",
-          ShortName: "Maps",
         },
         {
           Name: "My Maps",
           URL: "https://www.google.com/maps/d/",
-          Icon: "",
-          ShortName: "MyMaps",
         },
         {
           Name: "The Photographer's Ephemeris",
           URL: "https://app.photoephemeris.com/",
-          Icon: "",
-          ShortName: "TPE",
         },
       ],
     },
@@ -142,7 +115,6 @@ const Bookmarks = () => {
           Name: "Displate - Popart Master Chief",
           URL: "https://displate.com/displate/5136625?pe=Pop,military,gaming&dfw_tracker=99573-5136625&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzPonNSM8Zxzm9Ugqt7ZE8cqtn4YwkHPfmLkACCFwZ7BgEyp8HOZeooaApPeEALw_wcB",
           Note: "",
-          ShortName: "",
         },
       ],
     },
@@ -152,32 +124,22 @@ const Bookmarks = () => {
         {
           Name: "A2 Hosting",
           URL: "https://my.a2hosting.com/clientarea.php",
-          Icon: "",
-          ShortName: "A2",
         },
         {
           Name: "Google Domains",
           URL: "https://domains.google.com/m/registrar/",
-          Icon: "",
-          ShortName: "GD",
         },
         {
           Name: "Google Analytics",
           URL: "https://analytics.google.com/",
-          Icon: "",
-          ShortName: "GA",
         },
         {
           Name: "Google Search Console",
           URL: "https://bit.ly/3jxgAXF",
-          Icon: "",
-          ShortName: "GSC",
         },
         {
           Name: "Domain Name Generator",
           URL: "https://www.namemesh.com/",
-          Icon: "",
-          ShortName: "NameMesh",
         },
       ],
     },
@@ -187,20 +149,14 @@ const Bookmarks = () => {
         {
           Name: "CSS Animated Backgrounds",
           URL: "https://www.sliderrevolution.com/resources/css-animated-background/",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "CSS Lab",
           URL: "https://csslab.app/",
-          Icon: "",
-          ShortName: "CSSLab",
         },
         {
           Name: "HTML/CSS Best Practices",
           URL: "https://google.github.io/styleguide/htmlcssguide.html#HTML_Style_Rules",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Orbit - Futuristic Sci Fi Bootstrap Theme",
@@ -210,14 +166,10 @@ const Bookmarks = () => {
         {
           Name: "RGB Color Codes",
           URL: "https://bit.ly/3b3cNNf",
-          Icon: "",
-          ShortName: "RGB-CC",
         },
         {
           Name: "Web Design Tips",
           URL: "https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886",
-          Icon: "",
-          ShortName: "",
         },
       ],
     },
@@ -228,43 +180,31 @@ const Bookmarks = () => {
           Name: "Electron",
           URL: "https://www.electronjs.org/",
           Note: "Use for building cross-platform web applications.",
-          ShortName: "",
         },
         {
           Name: "Free For Developers",
           URL: "https://free-for.dev/#/",
           Note: "List of resources available for free to developers.",
-          ShortName: "",
         },
         {
           Name: "Free SVG Illustrations",
           URL: "https://www.reddit.com/r/webdev/comments/eejh52/websites_i_use_for_free_svg_illustrations/",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "Javascript Keycodes",
           URL: "https://keycode.info/",
-          Icon: "",
-          ShortName: "JS-KC",
         },
         {
           Name: "Mozilla MDN",
           URL: "https://developer.mozilla.org/en-US/",
-          Icon: "",
-          ShortName: "MDN",
         },
         {
           Name: "Web Skills Ladder",
           URL: "https://andreasbm.github.io/web-skills/",
-          Icon: "",
-          ShortName: "",
         },
         {
           Name: "W3 Schools",
           URL: "https://www.w3schools.com/",
-          Icon: "",
-          ShortName: "W3",
         },
       ],
     },
@@ -279,13 +219,24 @@ const Bookmarks = () => {
     } else {
       botTarg.classList.add("show");
     }
+  };
 
-    console.log(botTarg);
+  const bookmarkHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData: any = e.target;
+    addBookmark(formData[0].value, formData[1].value, formData[2].value);
+    formData[0].value = "";
+    formData[1].value = "";
+    formData[2].value = "";
+    document.querySelector(".successText")?.classList.toggle("show");
+    setTimeout(() => {
+      document.querySelector(".successText")?.classList.toggle("show");
+    }, 1000);
   };
 
   //Bookmark render logic - Categories.
   let renderedCats = marks.map(({ Category, Items }) => {
-    let renderedItems = Items.map(({ Name, URL, Icon, ShortName }) => {
+    let renderedItems = Items.map(({ Name, URL }) => {
       return (
         <li className="link">
           <a href={URL}>{Name}</a>
@@ -310,13 +261,62 @@ const Bookmarks = () => {
     );
   });
 
-  //Function Return Statement
-  return (
-    <div className="Bookmarks">
-      <h2 className="modTitle">Bookmarks</h2>
-      <div className="catCont">{renderedCats}</div>
-    </div>
-  );
+  //State to store component "maintenance" state
+  const [maint, setMaint] = useState<boolean>(false);
+
+  //Logic for showing maintenance panel
+  if (maint) {
+    return (
+      <div className="Bookmarks">
+        <h3 className="modTitle">Bookmarks Maintenance Panel</h3>
+        <div className="bmMaint">
+          <img
+            src={squareClose}
+            alt=""
+            onClick={() => setMaint(false)}
+            className="closeBmPanel"
+          />
+          <form onSubmit={bookmarkHandler} className="bmForm">
+            <div className="bmInput">
+              <label htmlFor="" className="bmInputLabel">
+                Category
+              </label>
+              <input type="text" className="bmInput" />
+            </div>
+            <div className="bmInput">
+              <label htmlFor="" className="bmInputLabel">
+                Name
+              </label>
+              <input type="text" className="bmInput" />
+            </div>
+            <div className="bmInput">
+              <label htmlFor="" className="bmInputLabel">
+                URL
+              </label>
+              <input type="text" className="bmInput" />
+            </div>
+            <div className="bmInput">
+              <button className="addBmButton">Add Bookmark</button>
+            </div>
+            <p className="successText">Bookmark added!</p>
+          </form>
+        </div>
+      </div>
+    );
+  } else {
+    //Function Return Statement
+    return (
+      <div className="Bookmarks">
+        <h2 className="modTitle">Bookmarks</h2>
+        <div className="catCont">{renderedCats}</div>
+        <div className="bmActions">
+          <button className="actionButton" onClick={() => setMaint(true)}>
+            EDIT
+          </button>
+        </div>
+      </div>
+    );
+  }
 };
 
 /* Export Statement */

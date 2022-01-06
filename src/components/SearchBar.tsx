@@ -1,6 +1,6 @@
 /* Library Imports */
 //React
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /* Stylesheet Imports */
 import "../styles/SearchBar.scss";
@@ -19,6 +19,12 @@ const SearchBar = () => {
     e.preventDefault();
     window.location.href = `https://www.google.com/search?q=${term}`;
   };
+
+  //Effect to focus the input on page load
+  useEffect(() => {
+    const targ = document.querySelector(".searchInput") as HTMLElement;
+    targ.focus();
+  }, []);
 
   return (
     <div className="SearchBar">

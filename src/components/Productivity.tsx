@@ -77,7 +77,7 @@ const Productivity = () => {
     updateLists(proxyList);
   };
 
-  //Logic to save and load from local storage
+  //Logic to load from local storage
   useEffect(() => {
     //Initial array (for setting state)
     let initList = [
@@ -106,6 +106,11 @@ const Productivity = () => {
       updateLists(initList);
     }
   }, []);
+
+  //Logic to save to local storage
+  useEffect(() => {
+    localStorage.setItem("listData", JSON.stringify(lists));
+  }, [lists]);
 
   //Checklist render logic.
   let renderedChecks = lists.map(({ Name, Items }) => {
