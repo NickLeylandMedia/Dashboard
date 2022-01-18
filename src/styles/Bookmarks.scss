@@ -63,7 +63,7 @@
 .bmMaint {
   background-color: white;
   height: 550px;
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
   overflow: auto;
   display: flex;
@@ -94,15 +94,6 @@
 
 .successText {
   display: none;
-}
-
-.closeBmPanel {
-  height: 50px;
-  width: 50px;
-  position: relative;
-  left: 200px;
-  margin: 15px 0;
-  cursor: pointer;
 }
 
 .show {

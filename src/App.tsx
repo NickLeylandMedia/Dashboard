@@ -16,7 +16,7 @@ import {
 import { getAnalytics } from "firebase/analytics";
 
 //React
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 /* Stylesheet Imports */
 import "./styles/App.scss";
@@ -57,11 +57,15 @@ const App = () => {
       const markProcess = fullQuery.forEach((doc) => {
         arr.push(doc.data());
       });
-
+      setBookMarks(arr);
       console.log(arr);
     };
+
     fetchData(db);
   }, []);
+
+  //State to store bookmarks from firebase
+  const [bookMarks, setBookMarks] = useState<any[]>([]);
 
   //Add a bookmark
   const addBookmark = async (Category: string, Name: string, URL: string) => {
@@ -77,7 +81,7 @@ const App = () => {
       <SearchBar />
       <QuickBar />
       <div className="row">
-        <Bookmarks addBookmark={addBookmark} />
+        <Bookmarks bookMarks={bookMarks} addBookmark={addBookmark} />
         <Productivity />
       </div>
     </React.Fragment>
