@@ -24,6 +24,7 @@ import "./styles/App.scss";
 /* Image Imports */
 
 /* Component Imports */
+import AppLauncher from "./components/AppLauncher";
 import Bookmarks from "./components/Bookmarks";
 import Productivity from "./components/Productivity";
 import QuickBar from "./components/QuickBar";
@@ -52,20 +53,76 @@ const App = () => {
   //Load data from firebase
   useEffect(() => {
     const fetchData = async (db: any) => {
-      const arr: any = [];
-      const fullQuery = await getDocs(collection(db, "Bookmarks"));
-      const markProcess = fullQuery.forEach((doc) => {
-        arr.push(doc.data());
+      const marksArr: any = [];
+      const appsArr: any = [];
+      const finalAppArr: any = [];
+      const proxAppsArr: any = [];
+      const fullMarkQuery = await getDocs(collection(db, "Bookmarks"));
+      const fullAppQuery = await getDocs(collection(db, "Apps"));
+      const appProcess = fullAppQuery.forEach((doc) => {
+        proxAppsArr.push(doc.data());
       });
-      setBookMarks(arr);
-      console.log(arr);
+      const markProcess = fullMarkQuery.forEach((doc) => {
+        marksArr.push(doc.data());
+      });
+
+      const App = (Icon: string, Name: string, URL: string) => {
+        return { Name: Name, Icon: Icon, URL: URL, Active: false };
+      };
+
+      proxAppsArr.forEach(
+        ({ Icon, Name, URL }: { Icon: string; Name: string; URL: string }) => {
+          const newApp = App(Icon, Name, URL);
+          finalAppArr.push(newApp);
+        }
+      );
+
+      setBookMarks(marksArr);
+      setApps(finalAppArr);
     };
+
+    //Bulk add apps
+    //addApp("SiGmail", "Gmail", "https://www.mail.google.com");
 
     fetchData(db);
   }, []);
 
   //State to store bookmarks from firebase
   const [bookMarks, setBookMarks] = useState<any[]>([]);
+  //State to store apps from firebase
+  const [apps, setApps] = useState<any[]>([]);
+  //State to store style selection
+  const [color, setColor] = useState<string>("red");
+
+  //State to set app background color
+  if (color === "blue") {
+    document.body.classList.remove("greenBack", "orangeBack", "redBack");
+    document.body.classList.add("blueBack");
+  }
+
+  if (color === "green") {
+    document.body.classList.remove("blueBack", "orangeBack", "redBack");
+    document.body.classList.add("greenBack");
+  }
+
+  if (color === "orange") {
+    document.body.classList.remove("blueBack", "greenBack", "redBack");
+    document.body.classList.add("orangeBack");
+  }
+
+  if (color === "red") {
+    document.body.classList.remove("blueBack", "greenBack", "orangeBack");
+    document.body.classList.add("redBack");
+  }
+
+  //Add an app
+  const addApp = async (Icon: string, Name: string, URL: string) => {
+    await setDoc(doc(db, "Apps", Name), {
+      Icon: Icon,
+      Name: Name,
+      URL: URL,
+    });
+  };
 
   //Add a bookmark
   const addBookmark = async (Category: string, Name: string, URL: string) => {
@@ -76,10 +133,26 @@ const App = () => {
     });
   };
 
+  //Active app toggle handler
+  const activeToggler = (App: string) => {
+    let proxApps = [...apps];
+    const index = proxApps.findIndex((item) => {
+      return item.Name === App;
+    });
+    if (proxApps[index].Active === false) {
+      proxApps[index].Active = true;
+      setApps(proxApps);
+    } else {
+      proxApps[index].Active = false;
+      setApps(proxApps);
+    }
+  };
+
   return (
     <React.Fragment>
       <SearchBar />
       <QuickBar />
+      <AppLauncher activeToggler={activeToggler} apps={apps} />
       <div className="row">
         <Bookmarks bookMarks={bookMarks} addBookmark={addBookmark} />
         <Productivity />

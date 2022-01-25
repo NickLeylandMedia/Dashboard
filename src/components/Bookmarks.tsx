@@ -26,7 +26,6 @@ const Bookmarks: React.FC<Props> = ({ addBookmark, bookMarks }) => {
     if (categoryArr.includes(bookMarks[i].Category)) {
     } else {
       categoryArr.push(bookMarks[i].Category);
-      console.log(categoryArr);
       categoryArr.sort((a, b) => (a < b ? -1 : 1));
     }
   }
@@ -35,14 +34,12 @@ const Bookmarks: React.FC<Props> = ({ addBookmark, bookMarks }) => {
       return { Category: Name, Items: [] };
     };
     activeArr.push(Category(categoryArr[i]));
-    console.log(activeArr);
   }
   for (let i = 0; i < activeArr.length; i++) {
     const filtrate = bookMarks.filter((item) => {
       return item.Category === activeArr[i].Category;
     });
     activeArr[i].Items = filtrate;
-    console.log(activeArr);
   }
 
   //Category Expansion Logic
