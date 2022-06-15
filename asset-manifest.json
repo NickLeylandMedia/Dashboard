@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Dashboard/static/css/main.8c20c695.chunk.css",
+    "main.js": "/Dashboard/static/js/main.007f6ecb.chunk.js",
+    "main.js.map": "/Dashboard/static/js/main.007f6ecb.chunk.js.map",
+    "runtime-main.js": "/Dashboard/static/js/runtime-main.0b86ce50.js",
+    "runtime-main.js.map": "/Dashboard/static/js/runtime-main.0b86ce50.js.map",
+    "static/js/2.6b249096.chunk.js": "/Dashboard/static/js/2.6b249096.chunk.js",
+    "static/js/2.6b249096.chunk.js.map": "/Dashboard/static/js/2.6b249096.chunk.js.map",
+    "static/js/3.0a861caf.chunk.js": "/Dashboard/static/js/3.0a861caf.chunk.js",
+    "static/js/3.0a861caf.chunk.js.map": "/Dashboard/static/js/3.0a861caf.chunk.js.map",
+    "index.html": "/Dashboard/index.html",
+    "static/css/main.8c20c695.chunk.css.map": "/Dashboard/static/css/main.8c20c695.chunk.css.map",
+    "static/js/2.6b249096.chunk.js.LICENSE.txt": "/Dashboard/static/js/2.6b249096.chunk.js.LICENSE.txt",
+    "static/media/Facebook.435ed5a8.svg": "/Dashboard/static/media/Facebook.435ed5a8.svg",
+    "static/media/Reddit.f6fd3594.svg": "/Dashboard/static/media/Reddit.f6fd3594.svg",
+    "static/media/Udemy.01db01f7.svg": "/Dashboard/static/media/Udemy.01db01f7.svg",
+    "static/media/Youtube.32745cdb.svg": "/Dashboard/static/media/Youtube.32745cdb.svg",
+    "static/media/blankBox.e5a9d6f8.svg": "/Dashboard/static/media/blankBox.e5a9d6f8.svg",
+    "static/media/checkedBox.bdf36f78.svg": "/Dashboard/static/media/checkedBox.bdf36f78.svg",
+    "static/media/github.e21209f2.svg": "/Dashboard/static/media/github.e21209f2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b86ce50.js",
+    "static/js/2.6b249096.chunk.js",
+    "static/css/main.8c20c695.chunk.css",
+    "static/js/main.007f6ecb.chunk.js"
+  ]
+}
