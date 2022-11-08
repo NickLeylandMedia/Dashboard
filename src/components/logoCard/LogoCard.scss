@@ -1,0 +1,41 @@
+.LogoCard {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+
+  color: black;
+
+  //Styling for text
+  p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0;
+  }
+
+  //Image Styling
+  .cardImage {
+    width: 55px;
+    height: 55px;
+  }
+
+  //Styling for last element
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+//Hover Styling
+.LogoCard.hover {
+  &:hover {
+    transform: scale(1.03);
+  }
+}

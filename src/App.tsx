@@ -24,12 +24,6 @@ import "./styles/App.scss";
 /* Image Imports */
 
 /* Component Imports */
-import AppLauncher from "./components/AppLauncher";
-import Bookmarks from "./components/Bookmarks";
-import Productivity from "./components/Productivity";
-import QuickBar from "./components/QuickBar";
-import SearchBar from "./components/SearchBar";
-import Reminders from "./components/Reminders";
 
 /* Component/Functions */
 const App = () => {
@@ -149,15 +143,11 @@ const App = () => {
   };
 
   return (
-    <React.Fragment>
-      <SearchBar />
-      <QuickBar />
-      <AppLauncher activeToggler={activeToggler} apps={apps} />
-      <div className="row">
-        <Bookmarks bookMarks={bookMarks} addBookmark={addBookmark} />
-        <Productivity />
-      </div>
-    </React.Fragment>
+    <div className="page">
+      <nav className="mainNav"></nav>
+      <div className="content"></div>
+      <div className="footer"></div>
+    </div>
   );
 };
 

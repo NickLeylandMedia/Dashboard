@@ -1,0 +1,35 @@
+@import "../../../styles/mixins/responsive.scss";
+
+.PhotoGrid {
+  width: 95%;
+  margin: 10px auto;
+}
+
+.gridDisp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.statusText {
+  text-align: center;
+  margin: 20px 0;
+}
+
+@include md {
+  .gridDisp {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@include lg {
+  .gridDisp {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@include xl {
+  .gridDisp {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

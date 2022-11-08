@@ -1,0 +1,22 @@
+@import "../../styles/mixins/responsive.scss";
+
+.GridMenu {
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+//Responsive Breakpoints
+@include md {
+  .GridMenu {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include lg {
+  .GridMenu {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

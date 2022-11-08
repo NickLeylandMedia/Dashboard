@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "http://www.nick-leyland.com/dashboard",
   "dependencies": {
+    "@sanity/client": "^3.3.3",
+    "@sanity/image-url": "^1.0.1",
+    "@tanstack/react-query": "^4.14.5",
+    "@tanstack/react-table": "^8.5.11",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -12,20 +16,23 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "axios": "^0.24.0",
+    "detect-it": "^4.0.1",
     "firebase": "^9.6.1",
+    "groq": "^2.29.3",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.5.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "test": "react-scripts --openssl-legacy-provider test",
-    "eject": "react-scripts --openssl-legacy-provider eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,30 @@
+@import "../../../styles/mixins/responsive.scss";
+
+.BookmarkDisp {
+  width: 90%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  text-align: center;
+  color: white;
+}
+
+@include md {
+  .BookmarkDisp {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include lg {
+  .BookmarkDisp {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@include xl {
+  .BookmarkDisp {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

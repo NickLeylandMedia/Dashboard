@@ -1,0 +1,31 @@
+.BookmarkCat {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  text-align: left;
+  height: 90px;
+  cursor: pointer;
+
+  h2 {
+    margin: 0;
+    padding: 10px 20px;
+  }
+}
+
+.linkBox {
+  display: none;
+  flex-direction: column;
+  padding: 0 20px;
+
+  a {
+    width: fit-content;
+  }
+}
+
+.BookmarkCat.large {
+  .linkBox {
+    display: flex;
+  }
+
+  min-height: 300px;
+}

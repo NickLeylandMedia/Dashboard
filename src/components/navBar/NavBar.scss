@@ -1,0 +1,65 @@
+@import "../../styles/mixins/responsive.scss";
+
+.mainNav {
+  width: 95%;
+  margin: 15px auto;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLogo {
+  height: 55px;
+  width: 55px;
+}
+
+.navLinks {
+  justify-content: center;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navItem {
+  margin: 0 15px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid black;
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+.navExpand {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.navButton {
+  height: 45px;
+  width: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+@include lg {
+  .navLinks {
+    display: flex;
+  }
+}

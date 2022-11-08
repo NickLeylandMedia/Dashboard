@@ -1,11 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+
+import Bookmarks from "./pages/Bookmarks";
+import Home from "./pages/Home";
+import Photos from "./pages/Photos";
+
+import "./styles/globals.scss";
+
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/photos" element={<Photos />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

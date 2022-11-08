@@ -3,23 +3,25 @@
 import React from "react";
 
 /* Stylesheet Imports */
-import "../styles/Reminders.scss";
+import "./BookmarkItem.scss";
 
 /* Image Imports */
 
 /* Component Imports */
 
+/* Module Imports */
+
 /* Component Interfaces */
 
 /* Component/Functions */
-const Reminders = () => {
+const BookmarkItem = () => {
   //Function return statement
   return (
-    <div className="Reminders">
-      <h1>Reminders</h1>
+    <div className="BookmarkItem">
+      <h1>BookmarkItem</h1>
     </div>
   );
 };
 
 /* Export Statement */
-export default Reminders;
+export default BookmarkItem;
